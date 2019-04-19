@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "proto";
+
+import "google/protobuf/any.proto";
+
+/**
+ *
+ * @apiDefine ProtoResp ProtoResp
+ *
+ * @apiParam (ProtoResp) {Int32} Code status code
+ * @apiParam (ProtoResp) {String} Message message
+ * @apiParam (ProtoResp) {String} TipInfo message
+ * @apiParam (ProtoResp) {google.protobuf.Any} Data data
+ *
+ */
+
+// ProtoResp proto resp with google/protobuf/any.proto
+message ProtoResp {
+    int64 Code = 1; // code
+    string Message = 2; // message
+    string TipInfo = 3; // tip
+    google.protobuf.Any Data = 4; // data
+}
