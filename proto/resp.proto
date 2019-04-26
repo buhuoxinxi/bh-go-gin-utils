@@ -1,8 +1,8 @@
 syntax = "proto3";
 
-package proto;
+package protos;
 
-option go_package = "proto";
+option go_package = "protos";
 
 import "google/protobuf/any.proto";
 
