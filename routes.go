@@ -33,3 +33,14 @@ func RegisterRouteGroup(engine *gin.Engine, groupRelativePath string, routes []*
 		group.Handle(route.HttpMethod, route.RelativePath, route.HandlerFunc...)
 	}
 }
+
+
+func RegistrGroup(engine *gin.Engine, groupRelativePath string) *gin.RouterGroup{
+	return engine.Group(groupRelativePath)
+}
+
+func RegisterRouteByGroup(group *gin.RouterGroup,routes []*Route){
+	for _, route := range routes {
+		group.Handle(route.HttpMethod, route.RelativePath, route.HandlerFunc...)
+	}
+}
