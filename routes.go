@@ -10,11 +10,11 @@ type Route struct {
 }
 
 // NewRoute new route
-func NewRoute(httpMethod, relativePath string, handlerFunc ...gin.HandlerFunc) *Route {
+func NewRoute(httpMethod, relativePath string, controller gin.HandlerFunc, handlerFunc ...gin.HandlerFunc) *Route {
 	return &Route{
 		HttpMethod:   httpMethod,
 		RelativePath: relativePath,
-		HandlerFunc:  handlerFunc,
+		HandlerFunc:  append(handlerFunc,controller),
 	}
 }
 
